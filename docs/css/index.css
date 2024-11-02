@@ -78,6 +78,9 @@
     }
 }
 @media (max-width: 400px) {
+    .majorevents{
+        width: 300px;
+    }
     .navbar {
         display: -webkit-box;
         display: -ms-flexbox;
