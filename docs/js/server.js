@@ -100,6 +100,20 @@ app.post('/update-player-updates', (req, res) => {
     });
 });
 
+// Endpoint to delete an event (rewrite the events JSON file)
+app.post('/delete-event', (req, res) => {
+    const updatedEvents = req.body;
+
+    // Write the updated events array to the events.json file
+    fs.writeFile('./events.json', JSON.stringify(updatedEvents, null, 2), (err) => {
+        if (err) {
+            return res.status(500).send('Error writing events file');
+        }
+        res.send('Event deleted successfully');
+    });
+});
+
+
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
