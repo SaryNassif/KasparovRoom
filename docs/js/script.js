@@ -1,6 +1,4 @@
-// Example passcode
-const validPasscode = "1234";  // Change this passcode as needed
-
+const validPasscode = "1234"; 
 // Fetch and display country balances from the backend
 async function fetchPlayerBalances() {
     const response = await fetch('http://localhost:3000/items');
@@ -160,6 +158,67 @@ async function addEventRow() {
         });
 
         alert("Event added successfully!");
+        fetchEvents(); // Refresh the events table
+    } else {
+        alert("Invalid passcode. Please try again.");
+    }
+}
+
+// Add a new event
+async function addEventRow() {
+    const passcodeInput = document.getElementById('event-passcode').value;
+
+    if (passcodeInput === validPasscode) {
+        const eventDescription = prompt("Enter Event Description:");
+
+        // Send new event to the backend
+        await fetch('http://localhost:3000/add-event', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ Description: eventDescription }),
+        });
+
+        alert("Event added successfully!");
+        fetchEvents(); // Refresh the events table
+    } else {
+        alert("Invalid passcode. Please try again.");
+    }
+}
+
+// Delete an event from the backend and the table
+async function deleteEventRow() {
+    const passcodeInput = document.getElementById('event-passcode').value;
+
+    if (passcodeInput === validPasscode) {
+        const eventDescription = prompt("Enter the exact Event Description to Delete:");
+
+        // Fetch events from the backend
+        const response = await fetch('http://localhost:3000/events');
+        const events = await response.json();
+
+        // Find the event index to delete
+        const eventIndex = events.findIndex(event => event.Description === eventDescription);
+        
+        if (eventIndex === -1) {
+            alert("Event not found. Please check the description and try again.");
+            return;
+        }
+
+        // Remove the event from the array
+        events.splice(eventIndex, 1);
+
+        // Send the updated events list to the backend
+        await fetch('http://localhost:3000/delete-event', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(events),
+        });
+
+        alert("Event deleted successfully!");
         fetchEvents(); // Refresh the events table
     } else {
         alert("Invalid passcode. Please try again.");
