@@ -7,18 +7,17 @@
     <link rel="icon" type="image/png" href="../images/favicon.png">
     <link rel="stylesheet" href="../css/index.css">
     <script defer src="../js/script.js"></script>
-</head> 
+</head>
 <body>
     <nav class="navbar">
         <h1>Kasparov Room</h1>
         <ul>
-            <li><a href="index">Home</a></li>
-            <li><a href="about">About</a></li>
-            <li><a href="events">Timetable</a></li>
-            <li><a href="meetus">Meet Our Heads</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="events.html">Timetable</a></li>
+            <li><a href="meetus.html">Meet Our Heads</a></li>
         </ul>
     </nav>
-
     <main>
         <div class="container">
             <table id="player-updates" class="playerupdates">
@@ -28,17 +27,17 @@
                 </tr>
 
                 <tr>
-                    <td>Cuba</td>
+                    <td>N/A</td>
                     <td>N/A</td>
                 </tr>
 
                 <tr>
-                    <td>Africa</td>
+                    <td>N/A</td>
                     <td>N/A</td>
                 </tr>
 
                 <tr>
-                    <td>USA</td>
+                    <td>N/A</td>
                     <td>N/A</td>
                 </tr>
                 <tr>
@@ -91,11 +90,15 @@
 
                 <tr>
                     <td colspan="2">
+                        <div class="thingycontainer">
                         <input type="password" placeholder="Enter Passcode" class="passcode-input" id="event-passcode">
                         <button class="edit-button" onclick="addEventRow()">Go</button>
+                        <button class="delete-event-button" onclick="deleteEventRow()">Delete</button>
+                        </div>
                     </td>
                 </tr>
             </table>
+
         </div>
     </main>
 </body>
