@@ -7,11 +7,12 @@ const app = express();
 const PORT = 3000;
 
 app.use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "https://www.kasparovroom.site");
+    res.setHeader("Access-Control-Allow-Origin", "https://kasparovroom.site");
     res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
     next();
 });
+
 app.use(express.json()); // Middleware to parse JSON bodies
 
 // Serve the static files (for your frontend if needed)
