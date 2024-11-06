@@ -1,0 +1,19 @@
+{
+  "name": "kasparovroom",
+  "version": "1.0.0",
+  "description": "Kasparov Room is a modernized MUN-style debate platform through an interactive website.",
+  "main": "server.js",
+  "engines": {
+    "node": "20.x"
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "node js/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
