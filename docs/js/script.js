@@ -1,5 +1,5 @@
 // Replace `your-vercel-domain.com` with your actual Vercel domain
-const baseURL = 'https://your-vercel-domain.com/api';
+const baseURL = 'https://kasparovroom.site/api';
 
 // Fetch player balances from the backend
 async function fetchPlayerBalances() {
