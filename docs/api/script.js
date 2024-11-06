@@ -2,7 +2,7 @@ const validPasscode = "1234";  // Change this passcode as needed
 
 // Fetch and display country balances from the backend
 async function fetchPlayerBalances() {
-    const response = await fetch('http://kasparovroom.site/items');
+    const response = await fetch('https://kasparovroom.site/items');
     const countries = await response.json();
     const table = document.getElementById('player-balances');
 
@@ -25,7 +25,7 @@ async function fetchPlayerBalances() {
 
 // Fetch and display events from the backend
 async function fetchEvents() {
-    const response = await fetch('http://kasparovroom.site/events');
+    const response = await fetch('https://kasparovroom.site/events');
     const events = await response.json();
     const table = document.getElementById('major-events');
 
@@ -45,7 +45,7 @@ async function fetchEvents() {
 
 // Fetch and display player updates from the backend
 async function fetchPlayerUpdates() {
-    const response = await fetch('http://kasparovroom.site/updates');
+    const response = await fetch('https://kasparovroom.site/updates');
     const updates = await response.json();
     const table = document.getElementById('player-updates');
 
@@ -79,7 +79,7 @@ async function addBalanceRow() {
         const newBalance = parseFloat(prompt("Enter New Balance (e.g., 700 for $700M):"));
 
         // Fetch data from the backend
-        const response = await fetch('http://kasparovroom.site/items');
+        const response = await fetch('https://kasparovroom.site/items');
         const countries = await response.json();
         
         let countryFound = false;
@@ -96,7 +96,7 @@ async function addBalanceRow() {
 
         if (countryFound) {
             // Send updated data to the backend
-            await fetch('http://kasparovroom.site/update-balance', {
+            await fetch('https://kasparovroom.site/update-balance', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -121,7 +121,7 @@ async function updatePlayerUpdates(playerName, previousBalance, newBalance) {
     const updateMessage = updateAmount > 0 ? `+${updateAmount}M` : `${updateAmount}M`; // Format the update message
 
     // Send new update to the backend
-    await fetch('http://kasparovroom.site/update-player-updates', {
+    await fetch('https://kasparovroom.site/update-player-updates', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -150,7 +150,7 @@ async function addEventRow() {
         const eventDescription = prompt("Enter Event Description:");
 
         // Send new event to the backend
-        await fetch('http://kasparovroom.site/add-event', {
+        await fetch('https://kasparovroom.site/add-event', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -173,7 +173,7 @@ async function addEventRow() {
         const eventDescription = prompt("Enter Event Description:");
 
         // Send new event to the backend
-        await fetch('http://kasparovroom.site/add-event', {
+        await fetch('https://kasparovroom.site/add-event', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -196,7 +196,7 @@ async function deleteEventRow() {
         const eventDescription = prompt("Enter the exact Event Description to Delete:");
 
         // Fetch events from the backend
-        const response = await fetch('http://kasparovroom.site/events');
+        const response = await fetch('https://kasparovroom.site/events');
         const events = await response.json();
 
         // Find the event index to delete
@@ -211,7 +211,7 @@ async function deleteEventRow() {
         events.splice(eventIndex, 1);
 
         // Send the updated events list to the backend
-        await fetch('http://kasparovroom.site/delete-event', {
+        await fetch('https://kasparovroom.site/delete-event', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
