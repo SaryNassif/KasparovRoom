@@ -1,13 +1,6 @@
 // Replace `your-vercel-domain.com` with your actual Vercel domain
 const baseURL = 'https://kasparovroom.site/api';
 
-app.use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "https://www.kasparovroom.site");
-    res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-    next();
-});
-
 // Fetch player balances from the backend
 async function fetchPlayerBalances() {
     try {
