@@ -1,0 +1,198 @@
+[
+  {
+    "_id": {
+      "$oid": "671571f55402a7991f86b01e"
+    },
+    "Name": "Russia",
+    "Money": 0
+  },
+  {
+    "_id": {
+      "$oid": "671571f55402a7991f86b01f"
+    },
+    "Name": "Ukraine",
+    "Money": 0
+  },
+  {
+    "_id": {
+      "$oid": "671571f55402a7991f86b020"
+    },
+    "Name": "Egypt",
+    "Money": 0
+  },
+  {
+    "_id": {
+      "$oid": "671571f55402a7991f86b021"
+    },
+    "Name": "Algeria",
+    "Money": 0
+  },
+  {
+    "_id": {
+      "$oid": "671571f55402a7991f86b022"
+    },
+    "Name": "Morocco",
+    "Money": 0
+  },
+  {
+    "_id": {
+      "$oid": "671571f55402a7991f86b023"
+    },
+    "Name": "KSA",
+    "Money": 0
+  },
+  {
+    "_id": {
+      "$oid": "671571f55402a7991f86b024"
+    },
+    "Name": "Brazil",
+    "Money": 0
+  },
+  {
+    "_id": {
+      "$oid": "671571f55402a7991f86b025"
+    },
+    "Name": "Canada",
+    "Money": 0
+  },
+  {
+    "_id": {
+      "$oid": "671571f55402a7991f86b026"
+    },
+    "Name": "India",
+    "Money": 0
+  },
+  {
+    "_id": {
+      "$oid": "671571f55402a7991f86b027"
+    },
+    "Name": "South Africa",
+    "Money": 0
+  },
+  {
+    "_id": {
+      "$oid": "671571f55402a7991f86b028"
+    },
+    "Name": "Italy",
+    "Money": 0
+  },
+  {
+    "_id": {
+      "$oid": "671571f55402a7991f86b029"
+    },
+    "Name": "Spain",
+    "Money": 0
+  },
+  {
+    "_id": {
+      "$oid": "671571f55402a7991f86b02a"
+    },
+    "Name": "Turkey",
+    "Money": 0
+  },
+  {
+    "_id": {
+      "$oid": "671571f55402a7991f86b02b"
+    },
+    "Name": "Iran",
+    "Money": 0
+  },
+  {
+    "_id": {
+      "$oid": "671571f55402a7991f86b02c"
+    },
+    "Name": "Iraq",
+    "Money": 0
+  },
+  {
+    "_id": {
+      "$oid": "671571f55402a7991f86b02d"
+    },
+    "Name": "Libya",
+    "Money": 0
+  },
+  {
+    "_id": {
+      "$oid": "671571f55402a7991f86b02e"
+    },
+    "Name": "Jordan",
+    "Money": 0
+  },
+  {
+    "_id": {
+      "$oid": "671571f55402a7991f86b02f"
+    },
+    "Name": "Australia",
+    "Money": 0
+  },
+  {
+    "_id": {
+      "$oid": "671571f55402a7991f86b030"
+    },
+    "Name": "Pakistan",
+    "Money": 0
+  },
+  {
+    "_id": {
+      "$oid": "671571f55402a7991f86b031"
+    },
+    "Name": "USA",
+    "Money": 200
+  },
+  {
+    "_id": {
+      "$oid": "671571f55402a7991f86b032"
+    },
+    "Name": "China",
+    "Money": 0
+  },
+  {
+    "_id": {
+      "$oid": "671571f55402a7991f86b033"
+    },
+    "Name": "France",
+    "Money": 0
+  },
+  {
+    "_id": {
+      "$oid": "671571f55402a7991f86b034"
+    },
+    "Name": "IRA",
+    "Money": 0
+  },
+  {
+    "_id": {
+      "$oid": "671571f55402a7991f86b035"
+    },
+    "Name": "Albionia",
+    "Money": 0
+  },
+  {
+    "_id": {
+      "$oid": "671571f55402a7991f86b036"
+    },
+    "Name": "Al Nadha",
+    "Money": 0
+  },
+  {
+    "_id": {
+      "$oid": "671571f55402a7991f86b037"
+    },
+    "Name": "Yugoslavia",
+    "Money": 0
+  },
+  {
+    "_id": {
+      "$oid": "671571f55402a7991f86b038"
+    },
+    "Name": "The UOS",
+    "Money": 0
+  },
+  {
+    "_id": {
+      "$oid": "671571f55402a7991f86b039"
+    },
+    "Name": "The Democratic People's Republic of Korea",
+    "Money": 0
+  }
+]
