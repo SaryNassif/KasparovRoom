@@ -1,6 +1,5 @@
 const validPasscode = "1234";  // Change this passcode as needed
 
-// Fetch and display country balances from the backend
 async function fetchPlayerBalances() {
     const response = await fetch('http://localhost:3000/items');
     const countries = await response.json();
@@ -43,32 +42,6 @@ async function fetchEvents() {
     });
 }
 
-// Fetch and display player updates from the backend
-async function fetchPlayerUpdates() {
-    const response = await fetch('http://localhost:3000/updates');
-    const updates = await response.json();
-    const table = document.getElementById('player-updates');
-
-    // Clear existing rows (except the header and last row)
-    const rowCount = table.rows.length;
-    for (let i = rowCount - 2; i > 0; i--) {  // Keep the last row intact
-        table.deleteRow(i);
-    }
-
-    // Add updates to the table
-    updates.forEach((update, index) => {
-        const newRow = table.insertRow(1); // Insert after header
-        const playerCell = newRow.insertCell(0);
-        const updateCell = newRow.insertCell(1);
-
-        playerCell.textContent = update.player;
-        updateCell.textContent = update.message;
-
-        if (index === 0) {
-            highlightRow(newRow);
-        }
-    });
-}
 
 // Add or update a country's balance
 async function addBalanceRow() {
@@ -106,30 +79,12 @@ async function addBalanceRow() {
 
             alert(`${countryName}'s balance updated to $${newBalance}M!`);
             fetchPlayerBalances(); // Refresh the table
-            updatePlayerUpdates(countryName, previousBalance, newBalance); // Update the Player Updates table
         } else {
             alert("Country not found.");
         }
     } else {
         alert("Invalid passcode. Please try again.");
     }
-}
-
-// Function to update the Player Updates table
-async function updatePlayerUpdates(playerName, previousBalance, newBalance) {
-    const updateAmount = newBalance - previousBalance; // Calculate the change in balance
-    const updateMessage = updateAmount > 0 ? `+${updateAmount}M` : `${updateAmount}M`; // Format the update message
-
-    // Send new update to the backend
-    await fetch('http://localhost:3000/update-player-updates', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ player: playerName, message: updateMessage }),
-    });
-
-    fetchPlayerUpdates(); // Refresh the updates table
 }
 
 // Function to highlight a row temporarily
@@ -230,5 +185,4 @@ async function deleteEventRow() {
 window.onload = function() {
     fetchPlayerBalances();
     fetchEvents();
-    fetchPlayerUpdates();
 };

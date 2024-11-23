@@ -32,15 +32,6 @@ app.get('/events', (req, res) => {
     });
 });
 
-// New endpoint to fetch updates (reading from the updates JSON file)
-app.get('/updates', (req, res) => {
-    fs.readFile('./updates.json', 'utf8', (err, data) => {
-        if (err) {
-            return res.status(500).send('Error reading updates file');
-        }
-        res.json(JSON.parse(data));
-    });
-});
 
 // Endpoint to update the balance (write to the JSON file)
 app.post('/update-balance', (req, res) => {
@@ -71,31 +62,6 @@ app.post('/add-event', (req, res) => {
                 return res.status(500).send('Error writing events file');
             }
             res.send('Event added successfully');
-        });
-    });
-});
-
-// New endpoint to update player updates (write to the updates JSON file)
-app.post('/update-player-updates', (req, res) => {
-    const newUpdate = req.body;
-
-    fs.readFile('./updates.json', 'utf8', (err, data) => {
-        if (err) {
-            return res.status(500).send('Error reading updates file');
-        }
-        let updates = JSON.parse(data);
-        
-        // Remove existing update for this player if any
-        updates = updates.filter(update => update.player !== newUpdate.player);
-        
-        // Add new update at the beginning of the array
-        updates.unshift(newUpdate);
-
-        fs.writeFile('./updates.json', JSON.stringify(updates, null, 2), (err) => {
-            if (err) {
-                return res.status(500).send('Error writing updates file');
-            }
-            res.send('Player update added successfully');
         });
     });
 });
