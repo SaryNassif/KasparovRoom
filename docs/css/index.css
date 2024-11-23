@@ -1,145 +1,3 @@
-@media (max-width: 768px) {
-    .container{
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
-                flex-wrap: wrap;
-    }
-
-    body {
-        overflow-x: hidden; /* Prevent horizontal scrolling */
-    }
-    .navbar {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
-        -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
-        padding: 15px 20px;
-        background-color: #2B3945;
-        -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        width: 100%; /* Ensure navbar takes full width */
-        -webkit-box-sizing: border-box;
-                box-sizing: border-box; /* Include padding and borders in width calculation */
-    }
-
-    .navbar ul {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
-        margin-top: 10px;
-        padding: 0;
-        width: 100%; /* Ensure ul takes full width */
-        -webkit-box-sizing: border-box;
-                box-sizing: border-box; /* Include padding and borders */
-        max-width: 100%; /* Prevent ul from exceeding screen width */
-    }
-
-    .navbar li {
-        margin-left: 0;
-        margin-top: 10px;
-        width: 100%; /* Ensure li takes full width */
-        -webkit-box-sizing: border-box;
-                box-sizing: border-box; /* Include padding and borders */
-        max-width: 100%; /* Prevent li from exceeding screen width */
-    }
-
-    .navbar a {
-        padding: 15px;
-        width: 100%; /* Make each link take full width */
-        -webkit-box-sizing: border-box;
-                box-sizing: border-box; /* Include padding in the width */
-        text-align: center;
-        display: block;
-        max-width: 100%; /* Prevent a elements from overflowing */
-    }
-
-    /* Optional: If the body or other elements are causing horizontal scrolling */
-    body {
-        overflow-x: hidden; /* Prevent any horizontal scrolling */
-    }
-}
-
-@media (max-width: 400px) {
-    .navbar {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column; /* Stack items vertically */
-        -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center; /* Center-align the title and links */
-        padding: 10px;
-        background-color: #2B3945;
-        -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        width: 100%;
-        -webkit-box-sizing: border-box;
-                box-sizing: border-box;
-    }
-
-    .navbar h1 {
-        font-size: 16px; /* Adjust font size to fit better */
-        margin: 0 5px 10px; /* Space out the title from the navbar links */
-        width: 100%; /* Take up full width */
-        text-align: center; /* Center the title */
-    }
-
-    .navbar ul {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex; /* Keep the links in a row */
-        -webkit-box-pack: center;
-            -ms-flex-pack: center;
-                justify-content: center; /* Center the links horizontally */
-        padding: 0;
-        margin: 0;
-        width: 100%;
-    }
-
-    .navbar li {
-        margin: 0 5px; /* Adjust the margin for even spacing */
-    }
-
-    .navbar a {
-        padding: 10px 5px; /* Reduce padding for smaller screens */
-        font-size: 12px; /* Adjust font size to fit better */
-        text-align: center;
-        display: inline-block; /* Ensure links stay in a row */
-        width: auto;
-    }
-
-    body {
-        overflow-x: hidden; /* Prevent horizontal scrolling */
-    }
-}
-
-@media (min-width: 400px) and (max-width: 767px) {
-    .container {
-        flex-direction: row; /* Prevents stacking in columns */
-        flex-wrap: wrap; /* Allows wrapping if there isn’t enough space */
-        justify-content: space-around; /* Centers or spaces items evenly */
-    }
-}
 /*Media*/
 
 /*Global Styles*/
@@ -300,4 +158,151 @@ button:hover {
 
 .thingycontainer{
     display: flex;
+}
+
+@media (max-width: 768px) {
+    .container{
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+                flex-wrap: wrap;
+    }
+
+    body {
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+    .navbar {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        padding: 15px 20px;
+        background-color: #2B3945;
+        -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        width: 100%; /* Ensure navbar takes full width */
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box; /* Include padding and borders in width calculation */
+    }
+
+    .navbar ul {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        margin-top: 10px;
+        padding: 0;
+        width: 100%; /* Ensure ul takes full width */
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box; /* Include padding and borders */
+        max-width: 100%; /* Prevent ul from exceeding screen width */
+    }
+
+    .navbar li {
+        margin-left: 0;
+        margin-top: 10px;
+        width: 100%; /* Ensure li takes full width */
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box; /* Include padding and borders */
+        max-width: 100%; /* Prevent li from exceeding screen width */
+    }
+
+    .navbar a {
+        padding: 15px;
+        width: 100%; /* Make each link take full width */
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box; /* Include padding in the width */
+        text-align: center;
+        display: block;
+        max-width: 100%; /* Prevent a elements from overflowing */
+    }
+
+    /* Optional: If the body or other elements are causing horizontal scrolling */
+    body {
+        overflow-x: hidden; /* Prevent any horizontal scrolling */
+    }
+}
+
+@media (max-width: 400px) {
+    .navbar {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column; /* Stack items vertically */
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center; /* Center-align the title and links */
+        padding: 10px;
+        background-color: #2B3945;
+        -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        width: 100%;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+    }
+
+    .navbar h1 {
+        font-size: 16px; /* Adjust font size to fit better */
+        margin: 0 5px 10px; /* Space out the title from the navbar links */
+        width: 100%; /* Take up full width */
+        text-align: center; /* Center the title */
+    }
+
+    .navbar ul {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; /* Keep the links in a row */
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center; /* Center the links horizontally */
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    .navbar li {
+        margin: 0 5px; /* Adjust the margin for even spacing */
+    }
+
+    .navbar a {
+        padding: 10px 5px; /* Reduce padding for smaller screens */
+        font-size: 12px; /* Adjust font size to fit better */
+        text-align: center;
+        display: inline-block; /* Ensure links stay in a row */
+        width: auto;
+    }
+
+    body {
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+
+    table{
+        width: 300px;
+    }
+}
+
+@media (min-width: 400px) and (max-width: 767px) {
+    .container {
+        flex-direction: row; /* Prevents stacking in columns */
+        flex-wrap: wrap; /* Allows wrapping if there isn’t enough space */
+        justify-content: space-around; /* Centers or spaces items evenly */
+    }
 }

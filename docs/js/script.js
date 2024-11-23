@@ -1,9 +1,8 @@
 const validPasscode = "1234";  // Change this passcode as needed
-const baseURL= 'http://localhost:3000'
 
 // Fetch and display country balances from the backend
 async function fetchPlayerBalances() {
-    const response = await fetch(`${baseURL}/items`);
+    const response = await fetch('http://145.223.22.203:3000/items');
     const countries = await response.json();
     const table = document.getElementById('player-balances');
 
@@ -26,7 +25,7 @@ async function fetchPlayerBalances() {
 
 // Fetch and display events from the backend
 async function fetchEvents() {
-    const response = await fetch(`${baseURL}/events`);
+    const response = await fetch('http://145.223.22.203:3000/events');
     const events = await response.json();
     const table = document.getElementById('major-events');
 
@@ -44,6 +43,33 @@ async function fetchEvents() {
     });
 }
 
+// Fetch and display player updates from the backend
+//async function fetchPlayerUpdates() {
+//    const response = await fetch('http://145.223.22.203:3000/updates');
+//    const updates = await response.json();
+//    const table = document.getElementById('player-updates');
+//
+//    // Clear existing rows (except the header and last row)
+//    const rowCount = table.rows.length;
+//    for (let i = rowCount - 2; i > 0; i--) {  // Keep the last row intact
+//        table.deleteRow(i);
+//    }
+//
+//    // Add updates to the table
+//    updates.forEach((update, index) => {
+//        const newRow = table.insertRow(1); // Insert after header
+//        const playerCell = newRow.insertCell(0);
+//        const updateCell = newRow.insertCell(1);
+//
+//        playerCell.textContent = update.player;
+//        updateCell.textContent = update.message;
+//
+//        if (index === 0) {
+//            highlightRow(newRow);
+//        }
+//    });
+//}
+
 // Add or update a country's balance
 async function addBalanceRow() {
     const passcodeInput = document.getElementById('balance-passcode').value;
@@ -53,7 +79,7 @@ async function addBalanceRow() {
         const newBalance = parseFloat(prompt("Enter New Balance (e.g., 700 for $700M):"));
 
         // Fetch data from the backend
-        const response = await fetch(`${baseURL}/items`);
+        const response = await fetch('http://145.223.22.203:3000/items');
         const countries = await response.json();
         
         let countryFound = false;
@@ -70,7 +96,7 @@ async function addBalanceRow() {
 
         if (countryFound) {
             // Send updated data to the backend
-            await fetch(`${baseURL}/update-balance`, {
+            await fetch('http://145.223.22.203:3000/update-balance', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -89,6 +115,22 @@ async function addBalanceRow() {
     }
 }
 
+// Function to update the Player Updates table
+//async function updatePlayerUpdates(playerName, previousBalance, newBalance) {
+//    const updateAmount = newBalance - previousBalance; // Calculate the change in balance
+//    const updateMessage = updateAmount > 0 ? `+${updateAmount}M` : `${updateAmount}M`; // Format the update message
+//
+//    // Send new update to the backend
+//    await fetch('http://145.223.22.203:3000/update-player-updates', {
+//        method: 'POST',
+//        headers: {
+//            'Content-Type': 'application/json',
+//        },
+//        body: JSON.stringify({ player: playerName, message: updateMessage }),
+//    });
+//
+//    fetchPlayerUpdates(); // Refresh the updates table
+//}
 
 // Function to highlight a row temporarily
 function highlightRow(row) {
@@ -108,7 +150,7 @@ async function addEventRow() {
         const eventDescription = prompt("Enter Event Description:");
 
         // Send new event to the backend
-        await fetch(`${baseURL}/add-event`, {
+        await fetch('http://145.223.22.203:3000/add-event', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -131,7 +173,7 @@ async function addEventRow() {
         const eventDescription = prompt("Enter Event Description:");
 
         // Send new event to the backend
-        await fetch(`${baseURL}/add-event`, {
+        await fetch('http://145.223.22.203:3000/add-event', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -154,7 +196,7 @@ async function deleteEventRow() {
         const eventDescription = prompt("Enter the exact Event Description to Delete:");
 
         // Fetch events from the backend
-        const response = await fetch(`${baseURL}/events`);
+        const response = await fetch('http://145.223.22.203:3000/events');
         const events = await response.json();
 
         // Find the event index to delete
@@ -169,7 +211,7 @@ async function deleteEventRow() {
         events.splice(eventIndex, 1);
 
         // Send the updated events list to the backend
-        await fetch(`${baseURL}/delete-event`, {
+        await fetch('http://145.223.22.203:3000/delete-event', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -188,4 +230,5 @@ async function deleteEventRow() {
 window.onload = function() {
     fetchPlayerBalances();
     fetchEvents();
+    //fetchPlayerUpdates();
 };
