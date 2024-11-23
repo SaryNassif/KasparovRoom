@@ -44,7 +44,6 @@ async function fetchEvents() {
     });
 }
 
-
 // Add or update a country's balance
 async function addBalanceRow() {
     const passcodeInput = document.getElementById('balance-passcode').value;
