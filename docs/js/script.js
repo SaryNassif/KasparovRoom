@@ -1,7 +1,9 @@
 const validPasscode = "1234";  // Change this passcode as needed
+const baseURL= 'http://localhost:3000'
 
+// Fetch and display country balances from the backend
 async function fetchPlayerBalances() {
-    const response = await fetch('http://localhost:3000/items');
+    const response = await fetch(`${baseURL}/items`);
     const countries = await response.json();
     const table = document.getElementById('player-balances');
 
@@ -24,7 +26,7 @@ async function fetchPlayerBalances() {
 
 // Fetch and display events from the backend
 async function fetchEvents() {
-    const response = await fetch('http://localhost:3000/events');
+    const response = await fetch(`${baseURL}/events`);
     const events = await response.json();
     const table = document.getElementById('major-events');
 
@@ -52,7 +54,7 @@ async function addBalanceRow() {
         const newBalance = parseFloat(prompt("Enter New Balance (e.g., 700 for $700M):"));
 
         // Fetch data from the backend
-        const response = await fetch('http://localhost:3000/items');
+        const response = await fetch(`${baseURL}/items`);
         const countries = await response.json();
         
         let countryFound = false;
@@ -69,7 +71,7 @@ async function addBalanceRow() {
 
         if (countryFound) {
             // Send updated data to the backend
-            await fetch('http://localhost:3000/update-balance', {
+            await fetch(`${baseURL}/update-balance`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -79,6 +81,7 @@ async function addBalanceRow() {
 
             alert(`${countryName}'s balance updated to $${newBalance}M!`);
             fetchPlayerBalances(); // Refresh the table
+            updatePlayerUpdates(countryName, previousBalance, newBalance); // Update the Player Updates table
         } else {
             alert("Country not found.");
         }
@@ -86,6 +89,7 @@ async function addBalanceRow() {
         alert("Invalid passcode. Please try again.");
     }
 }
+
 
 // Function to highlight a row temporarily
 function highlightRow(row) {
@@ -105,7 +109,7 @@ async function addEventRow() {
         const eventDescription = prompt("Enter Event Description:");
 
         // Send new event to the backend
-        await fetch('http://localhost:3000/add-event', {
+        await fetch(`${baseURL}/add-event`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -128,7 +132,7 @@ async function addEventRow() {
         const eventDescription = prompt("Enter Event Description:");
 
         // Send new event to the backend
-        await fetch('http://localhost:3000/add-event', {
+        await fetch(`${baseURL}/add-event`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -151,7 +155,7 @@ async function deleteEventRow() {
         const eventDescription = prompt("Enter the exact Event Description to Delete:");
 
         // Fetch events from the backend
-        const response = await fetch('http://localhost:3000/events');
+        const response = await fetch(`${baseURL}/events`);
         const events = await response.json();
 
         // Find the event index to delete
@@ -166,7 +170,7 @@ async function deleteEventRow() {
         events.splice(eventIndex, 1);
 
         // Send the updated events list to the backend
-        await fetch('http://localhost:3000/delete-event', {
+        await fetch(`${baseURL}/delete-event`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

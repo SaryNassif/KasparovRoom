@@ -140,7 +140,6 @@
         justify-content: space-around; /* Centers or spaces items evenly */
     }
 }
-
 /*Media*/
 
 /*Global Styles*/
@@ -232,7 +231,7 @@ table,th,td{
 }
 
 table{
-    width: 400px;
+    width: 300px;
     max-width: 100%;
     border-radius: 8px;
     overflow: hidden;

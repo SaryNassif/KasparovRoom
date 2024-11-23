@@ -32,7 +32,6 @@ app.get('/events', (req, res) => {
     });
 });
 
-
 // Endpoint to update the balance (write to the JSON file)
 app.post('/update-balance', (req, res) => {
     const updatedCountries = req.body;
@@ -65,6 +64,7 @@ app.post('/add-event', (req, res) => {
         });
     });
 });
+
 
 // Endpoint to delete an event (rewrite the events JSON file)
 app.post('/delete-event', (req, res) => {
