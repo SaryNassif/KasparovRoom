@@ -1,6 +1,5 @@
+DirectoryIndex /html/index.html
+
 RewriteEngine On
 RewriteCond %{HTTPS} on
 RewriteRule (.*) http://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
-
-# html/index... is default
-DirectoryIndex html/index.html
