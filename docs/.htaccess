@@ -1,12 +1,3 @@
-RewriteEngine On
-
-# Redirect root URL (/) to /html
-RewriteCond %{REQUEST_URI} ^/$
-RewriteRule ^ /html/ [R=301,L]
-
-# Set the default directory index file within /html
-DirectoryIndex index.html
-
 # Redirect HTTPS requests to HTTP
 RewriteCond %{HTTPS} on
 RewriteRule (.*) http://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
